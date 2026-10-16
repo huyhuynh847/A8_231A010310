@@ -1,3 +1,4 @@
+
 package vn.edu.vhu.ltdd.a8fragment;
 
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 public class NewsDetailFragment extends Fragment {
 
@@ -18,6 +20,7 @@ public class NewsDetailFragment extends Fragment {
 
     public static NewsDetailFragment newInstance(
             String tieuDe, String noiDung) {
+
         NewsDetailFragment f = new NewsDetailFragment();
 
         Bundle args = new Bundle();
@@ -34,6 +37,7 @@ public class NewsDetailFragment extends Fragment {
             @NonNull LayoutInflater inflater,
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
+
         return inflater.inflate(
                 R.layout.fragment_news_detail, container, false);
     }
@@ -42,6 +46,7 @@ public class NewsDetailFragment extends Fragment {
     public void onViewCreated(
             @NonNull View view,
             @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
 
         Bundle args = requireArguments();
@@ -57,13 +62,28 @@ public class NewsDetailFragment extends Fragment {
         tvNoiDung.setText(noiDung);
 
         btnDaDoc.setOnClickListener(v -> {
+
+            // Lưu trạng thái tin đã đọc vào ViewModel dùng chung
+            A8ViewModel viewModel =
+                    new ViewModelProvider(requireActivity())
+                            .get(A8ViewModel.class);
+
+            viewModel.setTinDaDoc(tieuDe);
+
+            // Gửi kết quả về NewsListFragment
             Bundle kq = new Bundle();
             kq.putString(KEY_TIEU_DE, tieuDe);
 
             getParentFragmentManager().setFragmentResult(
                     NewsListFragment.REQUEST_KEY, kq);
 
-            getParentFragmentManager().popBackStack();
+            // Tablet: giữ chi tiết ở khung bên phải
+            if (requireActivity().findViewById(
+                    R.id.detailContainer) == null) {
+
+                // Điện thoại: quay lại danh sách
+                getParentFragmentManager().popBackStack();
+            }
         });
     }
 }
