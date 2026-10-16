@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">A8_231A010310</string>
+
+    <string name="tab_home">Trang chủ</string>
+    <string name="tab_news">Tin tức</string>
+    <string name="tab_profile">Cá nhân</string>
+
+    <string name="home_hello">Xin chào, %1$s!</string>
+    <string name="home_hint">Mở Logcat và lọc theo A8</string>
+
+    <string name="list_title">Bản tin VHU</string>
+    <string name="list_none_read">Chưa đọc tin nào.</string>
+    <string name="news_detail_title">Chi tiết tin tức</string>
+    <string name="news_mark_read">Đánh dấu đã đọc</string>
+
+    <string name="profile_title">Thông tin cá nhân</string>
+    <string name="profile_name">Huỳnh Dương Gia Huy</string>
+    <string name="profile_mssv">231A010310</string>
+    <string name="detail_mark_read">Đánh dấu đã đọc</string>
+
+    <string name="previous">Previous</string>
+    <string name="lorem_ipsum">Đây là nội dung mẫu của ứng dụng.</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="list_last_read">Tin đã đọc: chưa có</string>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTieuDe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bản tin VHU"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvDaDoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tin đã đọc: chưa có"
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <LinearLayout
+        android:id="@+id/boxTin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnNews1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thông báo học vụ VHU" />
+
+        <Button
+            android:id="@+id/btnNews2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hoạt động sinh viên" />
+
+    </LinearLayout>
+
+</LinearLayout>
